@@ -31,7 +31,7 @@ sub MAIN($path = './' ) {
 
     for @perl-files -> $file {
         my $path = $file.Str;
-        say $path;
+        
         my $package = $path.subst(/.*\/lib\//, '').subst(/\//, '::',:g).subst(/\.pm6?$/,"");
         my $co  =  slurp($path).lines;
         my $actions = GGActions.new(expected => $package);
