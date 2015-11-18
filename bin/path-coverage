@@ -10,8 +10,9 @@ grammar GG {
     token classname {<-[\;\{\s]>+}
     token igclassname {\S+}
     token edl {[\;|\{]}
-    rule myunit {my unit? <keyword> <igclassname> <edl>}
-    rule unit {unit? <keyword> <classname> <edl>}
+    token unitw {unit}
+    rule myunit {my <unitw>? <keyword> <igclassname> <edl>}
+    rule unit {<unitw>? <keyword> <classname> <edl>}
 }
 
 class GGActions {
@@ -32,7 +33,7 @@ sub MAIN($path = './' ) {
     for @perl-files -> $file {
         my $path = $file.Str;
         
-        my $package = $path.subst(/.*\/lib\//, '').subst(/\//, '::',:g).subst(/\.pm6?$/,"");
+        my $package = $path.subst(/.*lib\//, '').subst(/\//, '::',:g).subst(/\.pm6?$/,"");
         my $co  =  slurp($path).lines;
         my $actions = GGActions.new(expected => $package);
         for  $path.IO.lines -> $line {
