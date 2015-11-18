@@ -1,3 +1,5 @@
+#!/usr/bin/env perl6
+
 use v6;
 
 use File::Find;
@@ -39,5 +41,11 @@ sub MAIN($path = './' ) {
         
     }
 }
+
+=begin pod
+
+C< find . -name "*.pm6" -print | xargs sed -i 's/\sBody/ LacunaCookbuk::Model::Body/g'>
+
+=end pod
 
 
