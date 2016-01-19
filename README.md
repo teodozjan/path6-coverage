@@ -19,5 +19,5 @@ Generates easy to copy paste provides section. It is required to delete last com
         "LacunaCookbuk::Id" : "lib/LacunaCookbuk/Id.pm6",
         "LacunaCookbuk::Client" : "lib/LacunaCookbuk/Client.pm6",
         "LacunaCookbuk::Logic::Commander" : "lib/LacunaCookbuk/Logic/Commander.pm6",
-        ...
-    }
+        ...,
+    },
