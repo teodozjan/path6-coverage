@@ -13,7 +13,7 @@ Even though it is nothing illegal to have package diffrent than file name. It is
 
 ## path-provides
 
-Generates easy to copy paste provides section. It is required to delete last comma.
+Generates easy to copy paste provides section. It is required to delete last comma manually.
 
       "provides"    : {
         "LacunaCookbuk::Id" : "lib/LacunaCookbuk/Id.pm6",
